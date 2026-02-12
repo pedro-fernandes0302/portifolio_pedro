@@ -1,109 +1,124 @@
-*{
-
-margin: 0;  /*remover as margens do navegador*/
-padding:0; /*remover prenchimentos padrão do navegador*/
-box-sizing: border-box;/*garante que bordas nao aumentem o tamanho dos elementos*/
-font-family: Arial, Helvetica, sans-serif
-
+* {
+  margin: 0; /*Remover as margens padrão do navegador*/
+  padding: 0; /*Remove os preenchimentos padrão do navegador*/
+  box-sizing: border-box; /*Garante que bordas não aumentem o tamanho dos elementos*/
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/*Estilizar brra de navegação*/
-.navbar
-{
-
-background-color: red;
-color: #fff;
-display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-;
+/* Estilizar a barra de navegação*/
+.navbar {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.navbar ul{
-    display: flex;
-    list-style: none;
-    margin: 0; 
-    padding: 0;
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0; /*remove as margens da lista*/
+  padding: 0; /*remove o preenchimento interno */
 }
 
 .navbar ul li a {
-   transition: 0.4s;
-    color: #fff;
-
-   text-decoration: none;
-   padding: 10px 20px;
-   display: block;
-   border-radius: 5px;
-    margin-left: 20px;
-
-
-
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 5px;
+  transition: 0.4s;
 }
-.navbar ul li a:hover { /*adiciona um fundo branco*/
-    background-color: #fff;/*add uma cor diferente ao texto(*/
-
-    color: red;
-    box-shadow: 0px 4px 10px black;
-transform: translateY(-2px);
-
+.navbar ul li a:hover {
+  background-color: white; /*adiciona um fundo branco*/
+  color: antiquewhite; /*adiciona uma cor diferente ao texto*/
+  box-shadow: 0px 4px 10px rgba(0, 0, 0.3);
+  /*0px move na horizontal
+  4px move na vertical
+  10px desfoque de 10px na sombra
+   rgba(0,0,0.3) adiciona a cor preta e uma transparencia de 30%(0.3)*/
+  transform: translateY(-2px); /*move a box 2px para cima*/
 }
 
-
-
-/*container que limita tamanho do carrose*/
+/*Container que limita o tamanho do Carrossel*/
 .slider {
-    margin:20px auto;/*centraliza na tela e da margem no topo*/
-    width: 800px; /*largura fixa do carrosel*/
-    height: 400px;/*altura fixa do carrosle*/
-    overflow: hidden;/*esconde oq estiver fora da caixa (as fotos)*/
-    border-radius: 10px;/*canto arredondado*/
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);/*sombra no baguiu*/
+  margin: 20px auto; /*Centraliza na tela e da margem no topo*/
+  width: 800px; /*largura fixa do carrossel */
+  height: 400px; /*Altura fixa do carrossel */
+  overflow: hidden; /*Esconde o que estiver fora da caixa (as outras fotos)*/
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /*sombra para dar profundidade*/
 }
+/*Div que contem as imagens alinhadas*/
 .slider-content {
-    width:400%;
-    height: 100%;/*ocupa 100% da altura do objeto "pai"*/
-    display: flex;/*coloca as imagens lado a lado*/
+  width: 400%;
+  height: 100%; /*Ocupa 100% da altura do objeto "PAI"*/
+  display: flex; /*Coloca as imagens uma do lado da outra*/
 }
-.slider-content input
-{
-    display: none;/*esconder os botoes de radio*/
-}
-/*estilizar cada imagem*/
-.slide-box
-{
-    width: 25%;/*coloca cada foto ocupando 25% (os 100 divido pra 4)*/
-    transition: 0.6s;/*tempo para transição*/
-}
-.slider-box img
-{width: 800px;
-height: 400px;
-object-fit: cover; /*garante que a imagem preencha todo o espaço sem distorcer*/
-}
-#radio1:checked ~ .first{margin-left: 0;}
-#radio2:checked ~ .first{margin-left: -25%;}
-#radio3:checked ~ .first{margin-left: -50%;}
-#radio4:checked ~ .first{margin-left: -75%;}
 
-/*estilodos botoes manuais do radio*/
-.nav-manual{
+/*Esconde os botões originais */
+.slider-content input {
+  display: none; /*Esconde os botões RADIO*/
+}
+/* Estilo de cada caixa de imagem*/
+.slider-box {
+  width: 25%; /*Cada foto ocupa 25% (100% divido por 4) */
+  transition: 0.6s; /* Tempo de animação de deslize entre as fotos*/
+}
 
-    position: absolute;/*posiçãofixo em casa slide*/
-    width: 800px;/* mesma largura do slider*/
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
+/*Garante que a imagem cubra todo o espaço sem distorcer*/
+.slider-box img {
+  width: 800px; /* Largura fixa para manter o padrão*/
+  height: 400px; /*Altura fixa para manter o padrão*/
+  object-fit: cover; /* Corta a imagem para preencher o espaço sem achatar */
 }
-.manual-btn
-{
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: 0.3s;
+
+/* LOGICA DE MOVIMENTO: AJUSTANDO PARA 4 IMAGENS */
+/*Imagem 1: Margem 0 */
+#radio1:checked ~ .first {
+  margin-left: 0;
 }
-.manual-btn:hover{
-    background-color: white;
+
+/*Imagem 2: Pula a primeira (25%) */
+#radio2:checked ~ .first {
+  margin-left: -25%;
+}
+
+/*Imagem 3: pula as duas primeiras (50%) */
+#radio3:checked ~ .first {
+  margin-left: -50%;
+}
+
+/* Imagem 4: pula as tres primeiras (75%)*/
+#radio4:checked ~ .first {
+  margin-left: -75%;
+}
+
+/*ESTILO DOS BOTÕES MANUAIS (BOLINHA)*/
+.nav-manual {
+  position: absolute; /*POSICIONAMENTO FIXO EM RELAÇÃO AO SLIDER */
+  width: 800px; /* Mesma largura do slider */
+  margin-top: -40px; /*Joga as bolinhas para dentro da imagem*/
+  display: flex;
+  justify-content: center; /*centraliza as bolinhas horizontalmente*/
+}
+.manual-btn {
+  border: 2px solid white; /*Borda branca para visibilidade */
+  padding: 5px; /* Tamanho das bolinhas*/
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px; /*Espaçamento entre as bolinhas*/
+  transition: 0.3s; /*Suaviza a mudança de cor no hover*/
+}
+.manual-btn:hover {
+  background-color: white;
+}
+
+/* ESTILIZAÇÃO DO RODAPÉ DA PÁGINA*/
+.rodape-principal{
+  background-color: black; 
+  color: white;
+  padding: 40px 0 20px 0;
+  margin-top:50px; /*afastar da galeria */
 }

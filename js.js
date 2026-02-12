@@ -10,11 +10,12 @@ setInterval(function(){
 //negocio que vai trocar as imagem
 function proxImg(){
     contador++;
-    if(contador > 4)
+    if(contador > 4){
         contador=1;
+    }
 }
 //aqui o js procura no html, o elemtno que tem id "radio"
 // + o numero do contador.
 // o '.checked=true' marca aqueles inputs de radio automaticamente
 // quando o radio é marcado, om CSS que configuramos ira mudar a imagem automaticamente
-document.getElementById('radio'+contador)= true;
+document.getElementById('radio'+ contador)= true;
