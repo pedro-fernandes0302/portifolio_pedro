@@ -32,13 +32,13 @@
 }
 .navbar ul li a:hover {
   background-color: white; /*adiciona um fundo branco*/
-  color: antiquewhite; /*adiciona uma cor diferente ao texto*/
+  color: blue; /*adiciona uma cor diferente ao texto*/
   box-shadow: 0px 4px 10px rgba(0, 0, 0.3);
   /*0px move na horizontal
   4px move na vertical
   10px desfoque de 10px na sombra
    rgba(0,0,0.3) adiciona a cor preta e uma transparencia de 30%(0.3)*/
-  transform: translateY(-2px); /*move a box 2px para cima*/
+  transform: translateY(-2px); /*move a box 2px para cima*/;
 }
 
 /*Container que limita o tamanho do Carrossel*/
@@ -117,8 +117,46 @@
 
 /* ESTILIZAÇÃO DO RODAPÉ DA PÁGINA*/
 .rodape-principal{
-  background-color: black; 
+  background-color: rgb(0, 0, 0); 
   color: white;
   padding: 40px 0 20px 0;
-  margin-top:50px; /*afastar da galeria */
+  margin-top:50px; /*afastar da galeria */;
+}
+.container-rodape{
+  width: 80%;
+  margin: 0 auto; /*centraliza o conteúdo do rodapé*/
+  display: flex;
+  justify-content: space-around; /*Espaça os itens do rodapé igualmente*/
+  align-items: center; /*Alinha os itens verticalmente*/
+  flex-wrap: wrap; /*Permite que os itens quebrem para a próxima linha em telas menores*/
+  max-width: 1200px; /*Limita a largura máxima do rodapé para melhor leitura em telas grandes*/
+}
+.social-link a {
+  color: white;
+  text-decoration: none;
+  margin: 15px; /*Espaçamento entre os links sociais*/
+  transition: 0.3s; /*Suaviza a mudança de cor no hover*/
+  text-align: center;
+  font-weight: bold; /*Deixa os links sociais em negrito para melhor visibilidade*/
+}
+.social-link a:hover {
+  color:blue; /*Altera a cor dos links sociais no hover*/
+}
+.info-copyright p {
+  margin: 05px 0; /*Espaçamento entre os parágrafos*/
+  text-align: center;
+}
+.rodape-inferior{
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid white; /*Linha separadora entre o conteúdo do rodapé e a parte inferior*/
+    margin-top: 30px; /*Aumenta a margem superior para dar mais espaço entre o conteúdo do rodapé e a linha separadora*/
+    padding-top: 20px; /*Aumenta o preenchimento superior para dar mais espaço entre a linha separadora e o texto inferior*/
+    font-size: 12px; /*Diminui o tamanho da fonte para o texto inferior*/
+    opacity: 0.8; /*Adiciona uma leve transparência ao texto inferior para diferenciá-lo do conteúdo principal do rodapé*/
+}
+.botao :hover {
+    transition: 0.6s;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3) ;
 }
