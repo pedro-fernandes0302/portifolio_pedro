@@ -159,4 +159,27 @@
     transition: 0.6s;
     transform: translateY(-2px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3) ;
+    cursor: pointer;
+}
+.img {
+    justify-content: center;
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /*Centraliza a imagem horizontalmente e adiciona margem vertical*/ 
+}
+.cabeçalho {
+    text-align: left; /*Centraliza o texto dentro do cabeçalho*/
+    padding: 20px; /*Adiciona espaçamento interno ao redor do texto*/
+    background-color: rgb(255, 255, 255); /*Fundo branco para destacar o cabeçalho*/
+    border-radius: 10px; /*Cantor arredondados para um visual mais suave*/
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /*Sombra leve para dar profundidade ao cabeçalho*/
+    margin: 20px auto; /*Centraliza o cabeçalho horizontalmente e adiciona margem vertical*/
+}
+.bagui {
+    text-align: center; /*Centraliza o texto dentro do elemento*/
+    font-size: 24px; /*Aumenta o tamanho da fonte para destacar o título*/
+    font-weight: bold; /*Deixa o texto em negrito para maior destaque*/
+    margin: 40px 0 20px 0; /*Adiciona margem superior e inferior para espaçamento*/
+    color: rgb(0, 0, 0); /*Define a cor do texto como preto para melhor contraste*/
 }
