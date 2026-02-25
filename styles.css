@@ -155,7 +155,7 @@
     font-size: 12px; /*Diminui o tamanho da fonte para o texto inferior*/
     opacity: 0.8; /*Adiciona uma leve transparência ao texto inferior para diferenciá-lo do conteúdo principal do rodapé*/
 }
-.botao :hover {
+.butao :hover {
     transition: 0.6s;
     transform: translateY(-2px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3) ;
@@ -174,7 +174,8 @@
     background-color: rgb(255, 255, 255); /*Fundo branco para destacar o cabeçalho*/
     border-radius: 10px; /*Cantor arredondados para um visual mais suave*/
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /*Sombra leve para dar profundidade ao cabeçalho*/
-    margin: 20px auto; /*Centraliza o cabeçalho horizontalmente e adiciona margem vertical*/
+    text-align: center;
+      margin: 20px auto; /*Centraliza o cabeçalho horizontalmente e adiciona margem vertical*/
 }
 .bagui {
     text-align: center; /*Centraliza o texto dentro do elemento*/
@@ -182,4 +183,61 @@
     font-weight: bold; /*Deixa o texto em negrito para maior destaque*/
     margin: 40px 0 20px 0; /*Adiciona margem superior e inferior para espaçamento*/
     color: rgb(0, 0, 0); /*Define a cor do texto como preto para melhor contraste*/
+}
+#dark-mode-toggle {
+    display: none;
+    position: fixed;
+}
+
+.toggle-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+.toggle-label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    position: absolute;
+}
+
+#dark-mode-toggle:checked + .toggle-label {
+    background: #333;
+
+    }
+
+#dark-mode-toggle:checked + .toggle-label::before {
+    transform: translateX(30px);
+}
+
+.content {
+    transition: 0.4s;
+}
+
+#dark-mode-toggle:checked ~ .content {
+    background-color: #121212;
+    color: white;
+}
+.s_m {
+    text-align: left; /*Centraliza o texto dentro do cabeçalho*/
+    padding: 20px; /*Adiciona espaçamento interno ao redor do texto*/
+    background-color: rgb(255, 255, 255); /*Fundo branco para destacar o cabeçalho*/
+    border-radius: 10px; /*Cantor arredondados para um visual mais suave*/
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /*Sombra leve para dar profundidade ao cabeçalho*/
+    text-align: center;
+      margin: 20px auto; /*Centraliza o cabeçalho horizontalmente e adiciona margem vertical*/
 }
