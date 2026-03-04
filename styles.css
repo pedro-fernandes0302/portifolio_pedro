@@ -20,6 +20,7 @@
   list-style: none;
   margin: 0; /*remove as margens da lista*/
   padding: 0; /*remove o preenchimento interno */
+  transform: translateX(-50px)
 }
 
 .navbar ul li a {
@@ -29,6 +30,7 @@
   display: block;
   border-radius: 5px;
   transition: 0.4s;
+
 }
 .navbar ul li a:hover {
   background-color: white; /*adiciona um fundo branco*/
@@ -230,7 +232,7 @@
 
 #dark-mode-toggle:checked ~ .content {
     background-color: #121212;
-    color: white;
+    color: rgb(131, 131, 131);
 }
 .s_m {
     text-align: left; /*Centraliza o texto dentro do cabeçalho*/
