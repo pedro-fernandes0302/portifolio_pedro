@@ -4,7 +4,13 @@
   box-sizing: border-box; /*Garante que bordas não aumentem o tamanho dos elementos*/
   font-family: Arial, Helvetica, sans-serif;
 }
+html{
+  scroll-behavior: smooth; /*Adiciona uma rolagem suave ao clicar nos links de navegação*/
 
+}
+body{
+  padding-top:70px
+}
 /* Estilizar a barra de navegação*/
 .navbar {
   background-color: rgb(0, 0, 0);
@@ -14,6 +20,9 @@
   align-items: center;
   padding: 15px 5%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /*Fixa a barra no topo da página*/
+  top: 0;
+  width: 100%;
 }
 .navbar ul {
   display: flex;
@@ -42,6 +51,19 @@
    rgba(0,0,0.3) adiciona a cor preta e uma transparencia de 30%(0.3)*/
   transform: translateY(-2px); /*move a box 2px para cima*/;
 }
+.navbar
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .navbar .menu {
+    display: flex;
+    gap: 20px;
+  }
+  .navbar a {
+    transition: all 0.4s;
+
+  }
 
 /*Container que limita o tamanho do Carrossel*/
 .slider {
@@ -173,18 +195,12 @@
 .cabeçalho {
     text-align: left; /*Centraliza o texto dentro do cabeçalho*/
     padding: 20px; /*Adiciona espaçamento interno ao redor do texto*/
-    background-color: rgb(255, 255, 255); /*Fundo branco para destacar o cabeçalho*/
-    border-radius: 10px; /*Cantor arredondados para um visual mais suave*/
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /*Sombra leve para dar profundidade ao cabeçalho*/
     text-align: center;
-      margin: 20px auto; /*Centraliza o cabeçalho horizontalmente e adiciona margem vertical*/
 }
 .bagui {
     text-align: center; /*Centraliza o texto dentro do elemento*/
     font-size: 24px; /*Aumenta o tamanho da fonte para destacar o título*/
     font-weight: bold; /*Deixa o texto em negrito para maior destaque*/
-    margin: 40px 0 20px 0; /*Adiciona margem superior e inferior para espaçamento*/
-    color: rgb(0, 0, 0); /*Define a cor do texto como preto para melhor contraste*/
 }
 #dark-mode-toggle {
     display: none;
@@ -192,7 +208,7 @@
 }
 
 .toggle-label {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     width: 60px;
@@ -214,7 +230,7 @@
     background: white;
     border-radius: 50%;
     transition: 0.4s;
-    position: absolute;
+    position: fixed;
 }
 
 #dark-mode-toggle:checked + .toggle-label {
@@ -230,16 +246,31 @@
     transition: 0.4s;
 }
 
-#dark-mode-toggle:checked ~ .content {
-    background-color: #121212;
-    color: rgb(131, 131, 131);
-}
-.s_m {
-    text-align: left; /*Centraliza o texto dentro do cabeçalho*/
-    padding: 20px; /*Adiciona espaçamento interno ao redor do texto*/
-    background-color: rgb(255, 255, 255); /*Fundo branco para destacar o cabeçalho*/
-    border-radius: 10px; /*Cantor arredondados para um visual mais suave*/
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /*Sombra leve para dar profundidade ao cabeçalho*/
+.Sobre_mim {
+  margin: 20px;
+  padding: 10px; /*Adiciona espaçamento interno ao redor do texto*/
     text-align: center;
-      margin: 20px auto; /*Centraliza o cabeçalho horizontalmente e adiciona margem vertical*/
 }
+  #dark-mode-toggle:checked ~ .content {
+    background-color: #5a5a5a;
+    color: rgb(255, 255, 255);
+  }
+  .contatos-content {
+   padding: 10px;
+    text-align: center;
+  }
+  .sobre_mim-text  {
+    padding: 0px;
+    text-align: center;
+  }
+  .contatos{
+    padding: 40px;
+    padding-top: 80px;
+    margin: 100px;
+  }
+  .Sobre_mim {
+    padding-top: 80px;
+  }
+  .portifolio {
+    padding-top: 80px;
+  }
