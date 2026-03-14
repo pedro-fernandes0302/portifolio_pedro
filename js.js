@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 // 1 criamos uma variável 'contador' para controlar
 // qual imagem deve aparecer
+var contador = 1;
 let contador = 1;
 
 // 2 a função setInterval executa a função proxImg
@@ -19,7 +19,6 @@ function proxImg(){
 
     document.getElementById('radio' + contador).checked = true;
 }
-=======
 //1 criamos uma variavel 'contado' para con trolar
 //qual imagem deve aparecer
 let contador=1;
@@ -41,4 +40,3 @@ function proxImg(){
 // o '.checked=true' marca aqueles inputs de radio automaticamente
 // quando o radio é marcado, om CSS que configuramos ira mudar a imagem automaticamente
 document.getElementById('radio'+ contador)= true;
->>>>>>> 93bf68387def376d1f20ce5b2f584d3489af2a85
