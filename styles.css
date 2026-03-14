@@ -1,0 +1,320 @@
+* {
+  margin: 0; /*Remover as margens padrão do navegador*/
+  padding: 0; /*Remove os preenchimentos padrão do navegador*/
+  box-sizing: border-box; /*Garante que bordas não aumentem o tamanho dos elementos*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+html{
+  scroll-behavior: smooth; /*Adiciona uma rolagem suave ao clicar nos links de navegação*/
+
+}
+body{
+  padding-top:70px; /*Adiciona um preenchimento no topo para evitar que o conteúdo fique escondido atrás da barra de navegação fixa*/
+
+}
+/* Estilizar a barra de navegação*/
+.navbar {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /*Fixa a barra no topo da página*/
+  top: 0;
+  width: 100%;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0; /*remove as margens da lista*/
+  padding: 0; /*remove o preenchimento interno */
+  transform: translateX(-50px)
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 5px;
+  transition: 0.4s;
+
+}
+.navbar ul li a:hover {
+  background-color: white; /*adiciona um fundo branco*/
+  color: blue; /*adiciona uma cor diferente ao texto*/
+  box-shadow: 0px 4px 10px rgba(0, 0, 0.3);
+  /*0px move na horizontal
+  4px move na vertical
+  10px desfoque de 10px na sombra
+   rgba(0,0,0.3) adiciona a cor preta e uma transparencia de 30%(0.3)*/
+  transform: translateY(-2px); /*move a box 2px para cima*/;
+}
+.navbar
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .navbar .menu {
+    display: flex;
+    gap: 20px;
+  }
+  .navbar a {
+    transition: all 0.4s;
+
+  }
+
+/*Container que limita o tamanho do Carrossel*/
+.slider {
+  margin: 20px auto; /*Centraliza na tela e da margem no topo*/
+  width: 800px; /*largura fixa do carrossel */
+  height: 400px; /*Altura fixa do carrossel */
+  overflow: hidden; /*Esconde o que estiver fora da caixa (as outras fotos)*/
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /*sombra para dar profundidade*/
+}
+/*Div que contem as imagens alinhadas*/
+.slider-content {
+  width: 400%;
+  height: 100%; /*Ocupa 100% da altura do objeto "PAI"*/
+  display: flex; /*Coloca as imagens uma do lado da outra*/
+}
+
+/*Esconde os botões originais */
+.slider-content input {
+  display: none; /*Esconde os botões RADIO*/
+}
+/* Estilo de cada caixa de imagem*/
+.slider-box {
+  width: 25%; /*Cada foto ocupa 25% (100% divido por 4) */
+  transition: 0.6s; /* Tempo de animação de deslize entre as fotos*/
+}
+
+/*Garante que a imagem cubra todo o espaço sem distorcer*/
+.slider-box img {
+  width: 800px; /* Largura fixa para manter o padrão*/
+  height: 400px; /*Altura fixa para manter o padrão*/
+  object-fit: cover; /* Corta a imagem para preencher o espaço sem achatar */
+}
+
+/* LOGICA DE MOVIMENTO: AJUSTANDO PARA 4 IMAGENS */
+/*Imagem 1: Margem 0 */
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+/*Imagem 2: Pula a primeira (25%) */
+#radio2:checked ~ .first {
+  margin-left: -25%;
+}
+
+/*Imagem 3: pula as duas primeiras (50%) */
+#radio3:checked ~ .first {
+  margin-left: -50%;
+}
+
+/* Imagem 4: pula as tres primeiras (75%)*/
+#radio4:checked ~ .first {
+  margin-left: -75%;
+}
+
+/*ESTILO DOS BOTÕES MANUAIS (BOLINHA)*/
+.nav-manual {
+  position: absolute; /*POSICIONAMENTO FIXO EM RELAÇÃO AO SLIDER */
+  width: 800px; /* Mesma largura do slider */
+  margin-top: -40px; /*Joga as bolinhas para dentro da imagem*/
+  display: flex;
+  justify-content: center; /*centraliza as bolinhas horizontalmente*/
+}
+.manual-btn {
+  border: 2px solid white; /*Borda branca para visibilidade */
+  padding: 5px; /* Tamanho das bolinhas*/
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px; /*Espaçamento entre as bolinhas*/
+  transition: 0.3s; /*Suaviza a mudança de cor no hover*/
+}
+.manual-btn:hover {
+  background-color: white;
+}
+
+/* ESTILIZAÇÃO DO RODAPÉ DA PÁGINA*/
+.rodape-principal{
+  background-color: rgb(0, 0, 0); 
+  color: white;
+  padding: 40px 0 20px 0;
+  margin-top:50px; /*afastar da galeria */;
+}
+.container-rodape{
+  width: 80%;
+  margin: 0 auto; /*centraliza o conteúdo do rodapé*/
+  display: flex;
+  justify-content: space-around; /*Espaça os itens do rodapé igualmente*/
+  align-items: center; /*Alinha os itens verticalmente*/
+  flex-wrap: wrap; /*Permite que os itens quebrem para a próxima linha em telas menores*/
+  max-width: 1200px; /*Limita a largura máxima do rodapé para melhor leitura em telas grandes*/
+}
+.social-link a {
+  color: white;
+  text-decoration: none;
+  margin: 15px; /*Espaçamento entre os links sociais*/
+  transition: 0.3s; /*Suaviza a mudança de cor no hover*/
+  text-align: center;
+  font-weight: bold; /*Deixa os links sociais em negrito para melhor visibilidade*/
+}
+.social-link a:hover {
+  color:blue; /*Altera a cor dos links sociais no hover*/
+}
+.info-copyright p {
+  margin: 05px 0; /*Espaçamento entre os parágrafos*/
+  text-align: center;
+}
+.rodape-inferior{
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid white; /*Linha separadora entre o conteúdo do rodapé e a parte inferior*/
+    margin-top: 30px; /*Aumenta a margem superior para dar mais espaço entre o conteúdo do rodapé e a linha separadora*/
+    padding-top: 20px; /*Aumenta o preenchimento superior para dar mais espaço entre a linha separadora e o texto inferior*/
+    font-size: 12px; /*Diminui o tamanho da fonte para o texto inferior*/
+    opacity: 0.8; /*Adiciona uma leve transparência ao texto inferior para diferenciá-lo do conteúdo principal do rodapé*/
+}
+.butao :hover {
+    transition: 0.6s;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3) ;
+    cursor: pointer;
+}
+.img {
+    justify-content: center;
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /*Centraliza a imagem horizontalmente e adiciona margem vertical*/ 
+}
+.cabeçalho {
+    text-align: left; /*Centraliza o texto dentro do cabeçalho*/
+    padding: 20px; /*Adiciona espaçamento interno ao redor do texto*/
+    text-align: center;
+}
+.bagui {
+    text-align: center; /*Centraliza o texto dentro do elemento*/
+    font-size: 24px; /*Aumenta o tamanho da fonte para destacar o título*/
+    font-weight: bold; /*Deixa o texto em negrito para maior destaque*/
+}
+#dark-mode-toggle {
+    display: none;
+    position: fixed;
+}
+
+.toggle-label {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+.toggle-label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    position: fixed;
+}
+
+#dark-mode-toggle:checked + .toggle-label {
+    background: #333;
+
+    }
+
+#dark-mode-toggle:checked + .toggle-label::before {
+    transform: translateX(30px);
+}
+
+.content {
+    transition: 0.4s;
+}
+
+.Sobre_mim {
+  margin: 20px;
+  padding: 10px; /*Adiciona espaçamento interno ao redor do texto*/
+    text-align: center;
+}
+  #dark-mode-toggle:checked ~ .content {
+    background-color: #5a5a5a;
+    color: rgb(255, 255, 255);
+  }
+  .contatos-content {
+   padding: 10px;
+    text-align: center;
+  }
+  .sobre_mim-text  {
+    padding: 0px;
+    text-align: center;
+  }
+  .contatos{
+    padding: 40px;
+    padding-top: 80px;
+    margin: 100px;
+  }
+  .Sobre_mim {
+    padding-top: 80px;
+  }
+  .portifolio {
+    padding-top: 80px;
+  }
+.formulario {
+  display: grid;
+  flex-direction: column-reverse;
+  align-items: end;
+  gap: 20px;
+}
+.formulario input, .formulario textarea {
+  width: 300px;
+  padding: 10px; 
+  border-radius: 10%;
+}
+.submit-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+.submit-button:hover
+ {  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  transition: 0.4s;
+}
+.contato{
+  background-color: rgb(255, 255, 255);
+  width: 1000px;
+  height: auto;
+  border-radius: 15px;
+  color: black;
+  margin: 0px auto; /*Centraliza o formulário horizontalmente*/
+  box-shadow: 0px 10px 20px rgba(119, 119, 119, 0.3); /*sombra para dar profundidade*/
+  box-sizing: border-box ; /*Garante que o preenchimento e a borda sejam incluídos no tamanho total do elemento*/
+  width: 500px;
+  height: auto;
+}
+#message{
+  resize: none; /*Desativa a opção de redimensionar a caixa de texto*/
+   gap: 10px;
+   padding: 10px;
+}
