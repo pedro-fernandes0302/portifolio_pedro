@@ -9,8 +9,12 @@ html{
 
 }
 body{
+<<<<<<< HEAD
   padding-top:70px; /*Adiciona um preenchimento no topo para evitar que o conteúdo fique escondido atrás da barra de navegação fixa*/
 
+=======
+  padding-top:70px
+>>>>>>> 93bf68387def376d1f20ce5b2f584d3489af2a85
 }
 /* Estilizar a barra de navegação*/
 .navbar {
@@ -274,6 +278,7 @@ body{
   }
   .portifolio {
     padding-top: 80px;
+<<<<<<< HEAD
   }
 .formulario {
   display: grid;
@@ -318,3 +323,6 @@ body{
    gap: 10px;
    padding: 10px;
 }
+=======
+  }
+>>>>>>> 93bf68387def376d1f20ce5b2f584d3489af2a85
