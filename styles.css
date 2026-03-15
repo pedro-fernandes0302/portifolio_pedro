@@ -286,6 +286,8 @@ body{
   width: 300px;
   padding: 10px; 
   border-radius: 10%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 .submit-button {
   padding: 10px 20px;
@@ -313,6 +315,7 @@ body{
   box-sizing: border-box ; /*Garante que o preenchimento e a borda sejam incluídos no tamanho total do elemento*/
   width: 500px;
   height: auto;
+  margin-right: 20px;
 }
 #message{
   resize: none; /*Desativa a opção de redimensionar a caixa de texto*/
